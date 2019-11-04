@@ -7,9 +7,9 @@ RUN mkdir -p /tmp/hdf5 && \
         | tar -xz --strip-components=1 && \
     mkdir /tmp/hdf5/build && cd /tmp/hdf5/build && \
     CXX=clang++-7.0 CC=clang-7.0 cmake \
-        -DCMAKE_INSTALL_PREFIX=/opt/hdf5
-        .. &&
-    make &&
+        -DCMAKE_INSTALL_PREFIX=/opt/hdf5 \
+        .. && \
+    make && \
     make install
 
 ENV CMAKE_PREFIX_PATH $CMAKE_PREFIX_PATH:/opt/hdf5/share/cmake
