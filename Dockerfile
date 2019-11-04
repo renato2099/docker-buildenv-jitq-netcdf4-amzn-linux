@@ -15,8 +15,8 @@ RUN mkdir -p /tmp/hdf5 && \
 ENV CMAKE_PREFIX_PATH $CMAKE_PREFIX_PATH:/opt/hdf5/share/cmake
 
 #NETCDF
-RUN yum install -y libnetcdf-dev && \
-    cd /tmp/ && git clone https://github.com/Unidata/netcdf-c.git && \
+#RUN yum install -y libnetcdf-dev && \
+RUN cd /tmp/ && git clone https://github.com/Unidata/netcdf-c.git && \
     mkdir -p /tmp/netcdf-c/build && cd /tmp/netcdf-c/build && \
     CXX=clang++-7.0 CC=clang-7.0 \
         cmake \
