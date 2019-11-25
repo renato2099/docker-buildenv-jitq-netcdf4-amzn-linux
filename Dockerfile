@@ -8,6 +8,7 @@ RUN mkdir -p /tmp/hdf5 && \
     mkdir /tmp/hdf5/build && cd /tmp/hdf5/build && \
     CXX=clang++-7.0 CC=clang-7.0 cmake \
         -DCMAKE_INSTALL_PREFIX=/opt/hdf5 \
+        -DHDF5_ENABLE_Z_LIB_SUPPORT=ON \
         .. && \
     make && \
     make install
